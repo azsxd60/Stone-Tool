@@ -13,4 +13,9 @@ item.Fsaxe.name=Full Stone Axe
 item.Fshoe.name=Full Stone Hoe
 item.Fssword.name=Full Ston Sword
 
+item.Shelmet.name=Stone Helmet
+item.Schestplate.name=Stone Chestplate
+item.Sleggings.name=Stone Leggings
+item.Sboots.name=Stone Boots
+
 itemGroup.tabsttool=Stone Tool
