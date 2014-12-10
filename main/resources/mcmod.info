@@ -1,0 +1,16 @@
+[
+{
+  "modid": "st",
+  "name": "Stone Tool",
+  "description": "",
+  "version": "1.00",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["CHIBAKENMA!"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
