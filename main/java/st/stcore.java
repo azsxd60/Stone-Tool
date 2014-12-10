@@ -27,7 +27,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 
-@Mod(modid = "st", name = "Stone Tool", version = "1.0.1")
+@Mod(modid = "st", name = "Stone Tool", version = "1.0.2")
 public class stcore {
 	
 	public static Item sstick;
@@ -44,7 +44,7 @@ public class stcore {
 	public static Item fshoe;
 	public static Item fssword;
 	
-	public static final Item.ToolMaterial FsMaterial = EnumHelper.addToolMaterial("FsMaterial", 1, 251, 5F, 2.5F, 5);
+	public static final Item.ToolMaterial FsMaterial = EnumHelper.addToolMaterial("FsMaterial", 1, 251, 5F, 0F, 5);
 	public static Block stblock;
 	
 	@EventHandler
