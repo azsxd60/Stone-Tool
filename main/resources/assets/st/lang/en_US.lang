@@ -12,3 +12,5 @@ item.Fsshovel.name=Full Stone Shovel
 item.Fsaxe.name=Full Stone Axe
 item.Fshoe.name=Full Stone Hoe
 item.Fssword.name=Full Ston Sword
+
+itemGroup.tabsttool=Stone Tool

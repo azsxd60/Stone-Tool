@@ -15,6 +15,7 @@ import st.item.sstick;
 import st.item.sswordhead;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -27,7 +28,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 
-@Mod(modid = "st", name = "Stone Tool", version = "1.0.2")
+@Mod(modid = "st", name = "Stone Tool", version = "1.0.3")
 public class stcore {
 	
 	public static Item sstick;
@@ -52,31 +53,31 @@ public class stcore {
 		//Item/Block init and registering
 		//Config handling
 		
-		stblock = new stblock(Material.cloth).setBlockName("Stblock").setBlockTextureName("st:stblock");
+		stblock = new stblock(Material.cloth).setBlockName("Stblock").setBlockTextureName("st:stblock").setCreativeTab(tabsttool);
 		GameRegistry.registerBlock(stblock, stblock.getUnlocalizedName().substring(5));
 		
-		sstick = new sstick().setUnlocalizedName("Sstick").setTextureName("st:sstick");
+		sstick = new sstick().setUnlocalizedName("Sstick").setTextureName("st:sstick").setCreativeTab(tabsttool);
 		GameRegistry.registerItem(sstick, sstick.getUnlocalizedName().substring(5));
-		spickaxehead = new spickaxehead().setUnlocalizedName("Spickaxehead").setTextureName("st:s_pickaxe_h");
+		spickaxehead = new spickaxehead().setUnlocalizedName("Spickaxehead").setTextureName("st:s_pickaxe_h").setCreativeTab(tabsttool);
 		GameRegistry.registerItem(spickaxehead, spickaxehead.getUnlocalizedName().substring(5));
-		sshovelhead = new sshovelhead().setUnlocalizedName("Sshovelhead").setTextureName("st:s_shovel_h");
+		sshovelhead = new sshovelhead().setUnlocalizedName("Sshovelhead").setTextureName("st:s_shovel_h").setCreativeTab(tabsttool);
 		GameRegistry.registerItem(sshovelhead, sshovelhead.getUnlocalizedName().substring(5));
-		saxehead = new saxehead().setUnlocalizedName("Saxehead").setTextureName("st:s_axe_h");
+		saxehead = new saxehead().setUnlocalizedName("Saxehead").setTextureName("st:s_axe_h").setCreativeTab(tabsttool);
 		GameRegistry.registerItem(saxehead, saxehead.getUnlocalizedName().substring(5));
-		shoehead = new shoehead().setUnlocalizedName("Shoehead").setTextureName("st:s_hoe_h");
+		shoehead = new shoehead().setUnlocalizedName("Shoehead").setTextureName("st:s_hoe_h").setCreativeTab(tabsttool);
 		GameRegistry.registerItem(shoehead, shoehead.getUnlocalizedName().substring(5));
-		sswordhead = new sswordhead().setUnlocalizedName("Sswordhead").setTextureName("st:s_sword_h");
+		sswordhead = new sswordhead().setUnlocalizedName("Sswordhead").setTextureName("st:s_sword_h").setCreativeTab(tabsttool);
 		GameRegistry.registerItem(sswordhead, sswordhead.getUnlocalizedName().substring(5));
 		
-		fspickaxe = new fspickaxe(FsMaterial).setUnlocalizedName("Fspickaxe").setTextureName("st:fs_pickaxe");
+		fspickaxe = new fspickaxe(FsMaterial).setUnlocalizedName("Fspickaxe").setTextureName("st:fs_pickaxe").setCreativeTab(tabsttool);
 		GameRegistry.registerItem(fspickaxe, fspickaxe.getUnlocalizedName().substring(5));
-		fsshovel = new fsshovel(FsMaterial).setUnlocalizedName("Fsshovel").setTextureName("st:fs_shovel");
+		fsshovel = new fsshovel(FsMaterial).setUnlocalizedName("Fsshovel").setTextureName("st:fs_shovel").setCreativeTab(tabsttool);
 		GameRegistry.registerItem(fsshovel, fsshovel.getUnlocalizedName().substring(5));
-		fsaxe = new fsaxe(FsMaterial).setUnlocalizedName("Fsaxe").setTextureName("st:fs_axe");
+		fsaxe = new fsaxe(FsMaterial).setUnlocalizedName("Fsaxe").setTextureName("st:fs_axe").setCreativeTab(tabsttool);
 		GameRegistry.registerItem(fsaxe, fsaxe.getUnlocalizedName().substring(5));
-		fshoe = new fshoe(FsMaterial).setUnlocalizedName("Fshoe").setTextureName("st:fs_hoe");
+		fshoe = new fshoe(FsMaterial).setUnlocalizedName("Fshoe").setTextureName("st:fs_hoe").setCreativeTab(tabsttool);
 		GameRegistry.registerItem(fshoe, fshoe.getUnlocalizedName().substring(5));
-		fssword = new fssword(FsMaterial).setUnlocalizedName("Fssword").setTextureName("st:fs_sword");
+		fssword = new fssword(FsMaterial).setUnlocalizedName("Fssword").setTextureName("st:fs_sword").setCreativeTab(tabsttool);
 		GameRegistry.registerItem(fssword, fssword.getUnlocalizedName().substring(5));
 	}
 	
@@ -149,6 +150,15 @@ public class stcore {
 	
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event){
-		
+				
 	}
+	
+	public static CreativeTabs tabsttool = new CreativeTabs("tabsttool"){
+		@Override
+		public Item getTabIconItem(){
+			return new ItemStack(stblock).getItem();
+			
+		}
+	};
+
 }
