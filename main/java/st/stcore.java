@@ -27,7 +27,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 
-@Mod(modid = "st", name = "Stone Tool", version = "1.0")
+@Mod(modid = "st", name = "Stone Tool", version = "1.0.1")
 public class stcore {
 	
 	public static Item sstick;
@@ -87,6 +87,11 @@ public class stcore {
         GameRegistry.addRecipe(new ItemStack(stblock),
                 "##",
                 "##",'#', Blocks.cobblestone
+        );
+        
+        GameRegistry.addRecipe(new ItemStack(Blocks.cobblestone,16),
+                "##",
+                "##",'#', stblock
         );
  
         GameRegistry.addRecipe(new ItemStack(sstick),
