@@ -20,7 +20,7 @@ public class fspicvel extends ItemTool{
 	});
 
 	public fspicvel(ToolMaterial material){
-		super(1.0F, material, field_150916_c);
+		super(0.0F, material, field_150916_c);
 	}
 
 	public boolean func_150897_b(Block block){

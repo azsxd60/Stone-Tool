@@ -33,7 +33,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 
-@Mod(modid = "st", name = "Stone Tool", version = "1.1.1")
+@Mod(modid = "st", name = "Stone Tool", version = "1.1.1a")
 public class stcore {
 	
 	public static Item sstick;
@@ -58,6 +58,7 @@ public class stcore {
 	public static Item sboots;
 	
 	public static final Item.ToolMaterial FsMaterial = EnumHelper.addToolMaterial("FsMaterial", 1, 251, 5F, 0F, 5);
+	public static final Item.ToolMaterial FsMaterial2 = EnumHelper.addToolMaterial("FsMaterial2", 1, 502, 5F, 0F, 5);
 	public static final ItemArmor.ArmorMaterial SArmorMaterial = EnumHelper.addArmorMaterial("SArmorMaterial", 166, new int[]{2,4,2,2}, 5);
 	
 	public static Block stblock;
@@ -83,7 +84,7 @@ public class stcore {
 		fsaxe = new fsaxe(FsMaterial).setUnlocalizedName("Fsaxe").setTextureName("st:fs_axe").setCreativeTab(tabsttool);
 		fshoe = new fshoe(FsMaterial).setUnlocalizedName("Fshoe").setTextureName("st:fs_hoe").setCreativeTab(tabsttool);
 		fssword = new fssword(FsMaterial).setUnlocalizedName("Fssword").setTextureName("st:fs_sword").setCreativeTab(tabsttool);
-		fspicvel = new fspicvel(FsMaterial).setUnlocalizedName("Fspicvel").setTextureName("st:fs_picvel").setCreativeTab(tabsttool);
+		fspicvel = new fspicvel(FsMaterial2).setUnlocalizedName("Fspicvel").setTextureName("st:fs_picvel").setCreativeTab(tabsttool);
 		
 		//Armor
 		shelmet = new sarmor(SArmorMaterial, 0, 0).setUnlocalizedName("Shelmet").setTextureName("st:s_helmet").setCreativeTab(tabsttool);
