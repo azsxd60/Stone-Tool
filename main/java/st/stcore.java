@@ -5,6 +5,7 @@ import st.block.stblock;
 import st.item.fsaxe;
 import st.item.fshoe;
 import st.item.fspickaxe;
+import st.item.fspicvel;
 import st.item.fsshovel;
 import st.item.fssword;
 import st.item.sarmor;
@@ -12,6 +13,7 @@ import st.item.saxehead;
 import st.item.shelmet;
 import st.item.shoehead;
 import st.item.spickaxehead;
+import st.item.spicvelhead;
 import st.item.sshovelhead;
 import st.item.sstick;
 import st.item.sswordhead;
@@ -31,7 +33,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 
-@Mod(modid = "st", name = "Stone Tool", version = "1.1.0")
+@Mod(modid = "st", name = "Stone Tool", version = "1.1.1")
 public class stcore {
 	
 	public static Item sstick;
@@ -41,12 +43,14 @@ public class stcore {
 	public static Item saxehead;
 	public static Item shoehead;
 	public static Item sswordhead;
+	public static Item spicvelhead;
 	
 	public static Item fspickaxe;
 	public static Item fsshovel;
 	public static Item fsaxe;
 	public static Item fshoe;
 	public static Item fssword;
+	public static Item fspicvel;
 	
 	public static Item shelmet;
 	public static Item schestplate;
@@ -72,12 +76,15 @@ public class stcore {
 		saxehead = new saxehead().setUnlocalizedName("Saxehead").setTextureName("st:s_axe_h").setCreativeTab(tabsttool);
 		shoehead = new shoehead().setUnlocalizedName("Shoehead").setTextureName("st:s_hoe_h").setCreativeTab(tabsttool);
 		sswordhead = new sswordhead().setUnlocalizedName("Sswordhead").setTextureName("st:s_sword_h").setCreativeTab(tabsttool);
+		spicvelhead = new spicvelhead().setUnlocalizedName("Spicvelhead").setTextureName("st:s_picvel_h").setCreativeTab(tabsttool);
 		//Tool
 		fspickaxe = new fspickaxe(FsMaterial).setUnlocalizedName("Fspickaxe").setTextureName("st:fs_pickaxe").setCreativeTab(tabsttool);
 		fsshovel = new fsshovel(FsMaterial).setUnlocalizedName("Fsshovel").setTextureName("st:fs_shovel").setCreativeTab(tabsttool);
 		fsaxe = new fsaxe(FsMaterial).setUnlocalizedName("Fsaxe").setTextureName("st:fs_axe").setCreativeTab(tabsttool);
 		fshoe = new fshoe(FsMaterial).setUnlocalizedName("Fshoe").setTextureName("st:fs_hoe").setCreativeTab(tabsttool);
 		fssword = new fssword(FsMaterial).setUnlocalizedName("Fssword").setTextureName("st:fs_sword").setCreativeTab(tabsttool);
+		fspicvel = new fspicvel(FsMaterial).setUnlocalizedName("Fspicvel").setTextureName("st:fs_picvel").setCreativeTab(tabsttool);
+		
 		//Armor
 		shelmet = new sarmor(SArmorMaterial, 0, 0).setUnlocalizedName("Shelmet").setTextureName("st:s_helmet").setCreativeTab(tabsttool);
 		schestplate = new sarmor(SArmorMaterial, 0, 1).setUnlocalizedName("Schestplate").setTextureName("st:s_chestplate").setCreativeTab(tabsttool);
@@ -93,12 +100,15 @@ public class stcore {
 		GameRegistry.registerItem(saxehead, saxehead.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(shoehead, shoehead.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(sswordhead, sswordhead.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(spicvelhead, spicvelhead.getUnlocalizedName().substring(5));
 		//Tool
 		GameRegistry.registerItem(fspickaxe, fspickaxe.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(fsshovel, fsshovel.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(fsaxe, fsaxe.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(fshoe, fshoe.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(fssword, fssword.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(fspicvel, fspicvel.getUnlocalizedName().substring(5));
+		
 		//Armor
 		GameRegistry.registerItem(shelmet, shelmet.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(schestplate, schestplate.getUnlocalizedName().substring(5));
@@ -121,12 +131,14 @@ public class stcore {
         GameRegistry.addRecipe(new ItemStack(saxehead)," #","##",'#', stblock);
         GameRegistry.addRecipe(new ItemStack(shoehead),"##",'#', stblock);
         GameRegistry.addRecipe(new ItemStack(sswordhead),"#","#",'#', stblock);
+        GameRegistry.addShapelessRecipe(new ItemStack(spicvelhead), spickaxehead, sshovelhead);
         //Tool
         GameRegistry.addRecipe(new ItemStack(fspickaxe),"W","#",'W', spickaxehead,'#',sstick);
         GameRegistry.addRecipe(new ItemStack(fsshovel),"W","#",'W', sshovelhead,'#',sstick);
         GameRegistry.addRecipe(new ItemStack(fsaxe),"W","#",'W', saxehead,'#',sstick);
         GameRegistry.addRecipe(new ItemStack(fshoe),"W","#",'W', shoehead,'#',sstick);
         GameRegistry.addRecipe(new ItemStack(fssword),"W","#",'W', sswordhead,'#',sstick);
+        GameRegistry.addRecipe(new ItemStack(fspicvel),"W","#",'W', spicvelhead,'#',sstick);
         
         //Armor
         GameRegistry.addRecipe(new ItemStack(shelmet),"###","# #",'#',stblock);
