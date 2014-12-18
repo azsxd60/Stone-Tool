@@ -2,6 +2,7 @@ package st;
 
 
 import st.block.stblock;
+import st.block.storch;
 import st.item.fsaxe;
 import st.item.fshoe;
 import st.item.fspickaxe;
@@ -21,10 +22,12 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -33,7 +36,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 
-@Mod(modid = "st", name = "Stone Tool", version = "1.1.1a")
+@Mod(modid = "st", name = "Stone Tool", version = "1.2")
 public class stcore {
 	
 	public static Item sstick;
@@ -58,10 +61,11 @@ public class stcore {
 	public static Item sboots;
 	
 	public static final Item.ToolMaterial FsMaterial = EnumHelper.addToolMaterial("FsMaterial", 1, 251, 5F, 0F, 5);
-	public static final Item.ToolMaterial FsMaterial2 = EnumHelper.addToolMaterial("FsMaterial2", 1, 502, 5F, 0F, 5);
+	public static final Item.ToolMaterial FsMaterial2 = EnumHelper.addToolMaterial("FsMaterial2", 1, 502, 5F, 1F, 5);
 	public static final ItemArmor.ArmorMaterial SArmorMaterial = EnumHelper.addArmorMaterial("SArmorMaterial", 166, new int[]{2,4,2,2}, 5);
 	
 	public static Block stblock;
+	public static Block storch;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event){
@@ -70,6 +74,7 @@ public class stcore {
 		
 		//Blocks
 		stblock = new stblock(Material.cloth).setBlockName("Stblock").setBlockTextureName("st:stblock").setCreativeTab(tabsttool);
+		storch = new storch().setBlockName("Storch").setBlockTextureName("st:storch").setCreativeTab(tabsttool);
 		//Stick&ToolHead
 		sstick = new sstick().setUnlocalizedName("Sstick").setTextureName("st:sstick").setCreativeTab(tabsttool);
 		spickaxehead = new spickaxehead().setUnlocalizedName("Spickaxehead").setTextureName("st:s_pickaxe_h").setCreativeTab(tabsttool);
@@ -94,6 +99,7 @@ public class stcore {
 		
 		//Blocks
 		GameRegistry.registerBlock(stblock, stblock.getUnlocalizedName().substring(5));
+		GameRegistry.registerBlock(storch, storch.getUnlocalizedName().substring(5));
 		//Stick&ToolHead
 		GameRegistry.registerItem(sstick, sstick.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(spickaxehead, spickaxehead.getUnlocalizedName().substring(5));
@@ -102,6 +108,7 @@ public class stcore {
 		GameRegistry.registerItem(shoehead, shoehead.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(sswordhead, sswordhead.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(spicvelhead, spicvelhead.getUnlocalizedName().substring(5));
+		
 		//Tool
 		GameRegistry.registerItem(fspickaxe, fspickaxe.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(fsshovel, fsshovel.getUnlocalizedName().substring(5));
@@ -116,6 +123,7 @@ public class stcore {
 		GameRegistry.registerItem(sleggings, sleggings.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(sboots, sboots.getUnlocalizedName().substring(5));
 		
+		
 	}
 	
 	@EventHandler
@@ -125,6 +133,7 @@ public class stcore {
 		//Blocks
         GameRegistry.addRecipe(new ItemStack(stblock),"##","##",'#', Blocks.cobblestone);
         GameRegistry.addRecipe(new ItemStack(Blocks.cobblestone,16),"##","##",'#', stblock);
+        GameRegistry.addRecipe(new ItemStack(storch,4),"#","W",'#',new ItemStack(Items.coal,1,OreDictionary.WILDCARD_VALUE),'W',sstick);
         //Stick&ToolHead
         GameRegistry.addRecipe(new ItemStack(sstick),"#","#",'#', Blocks.cobblestone);
         GameRegistry.addRecipe(new ItemStack(spickaxehead),"##","# ",'#', stblock);

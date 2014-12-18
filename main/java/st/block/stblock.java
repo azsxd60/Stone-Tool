@@ -10,7 +10,7 @@ public class stblock extends Block {
         setHardness(0.02F);
         setResistance(20F);
         setStepSound(Block.soundTypeStone);
-        setLightLevel(0.55F);
+        setLightLevel(0.65F);
 	}
 
 }

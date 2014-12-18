@@ -1,4 +1,5 @@
 tile.Stblock.name=Tool Stone
+tile.Storch.name=Stone Torch
 
 item.Sstick.name=Stone Stick
 item.Spickaxehead.name=Stone Pickaxe Head
@@ -13,7 +14,7 @@ item.Fsshovel.name=Full Stone Shovel
 item.Fsaxe.name=Full Stone Axe
 item.Fshoe.name=Full Stone Hoe
 item.Fssword.name=Full Stone Sword
-item.Fspicvel.name=Full Stone picvel
+item.Fspicvel.name=Full Stone Picvel
 
 item.Shelmet.name=Stone Helmet
 item.Schestplate.name=Stone Chestplate
